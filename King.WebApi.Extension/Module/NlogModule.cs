@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using NLog.Extensions.Logging;
 
-namespace King.WebApi.Extension
+namespace King.WebApi.Extension.Module
 {
     public static class NlogModule
     {

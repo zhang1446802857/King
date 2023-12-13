@@ -8,10 +8,12 @@ namespace King.WebApi.Controllers
     [ApiController]
     public class TestController : ControllerBase
     {
-        public TestController(ITestService testService)
+        public TestController(ITestService testService,ILogger<TestController> logger)
         {
             _testService = testService;
+            _logger = logger;
         }
+        private readonly ILogger<TestController> _logger;
         private readonly ITestService _testService;
 
         /// <summary>

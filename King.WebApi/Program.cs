@@ -1,6 +1,6 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using King.WebApi.Extension;
+using King.WebApi.Extension.Module;
 
 namespace King.WebApi
 {
@@ -13,6 +13,7 @@ namespace King.WebApi
             builder.Services.AddSwaggerModule();//swagger
             builder.Services.AddSqlSugarModule();//sqlsugar
             builder.Services.AddNlogModule();//nlog
+            builder.Services.AddGlobalExceptionModule();//È«¾ÖÒì³£
 
             #region autofac
             builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory()) ;
