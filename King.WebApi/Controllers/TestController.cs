@@ -1,6 +1,8 @@
-﻿using King.WebApi.Model.Models;
+﻿using King.WebApi.Extension.Filter;
+using King.WebApi.Model.Models;
 using King.WebApi.Service.IService;
 using Microsoft.AspNetCore.Mvc;
+using King.WebApi.Extension.Enum;
 
 namespace King.WebApi.Controllers
 {
@@ -8,7 +10,7 @@ namespace King.WebApi.Controllers
     [ApiController]
     public class TestController : ControllerBase
     {
-        public TestController(ITestService testService,ILogger<TestController> logger)
+        public TestController(ITestService testService, ILogger<TestController> logger)
         {
             _testService = testService;
             _logger = logger;
@@ -21,6 +23,7 @@ namespace King.WebApi.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
+        [Routes(Versions.Dev)]
         public async Task<bool> insert()
         {
             var result = await _testService.InsertAsync(new TestModel

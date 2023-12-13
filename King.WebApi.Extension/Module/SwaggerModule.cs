@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using King.WebApi.Extension.Enum;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,9 @@ namespace King.WebApi.Extension.Module
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen(s =>
             {
-                typeof(Version).GetEnumNames().ToList().ForEach(v =>
+                typeof(Versions).GetEnumNames().ToList().ForEach(v =>
                 {
-                    int version = (int)Enum.Parse(typeof(Version), v);
+                    int version = (int)Enum.Versions.Parse(typeof(Versions), v);
                     var description = string.Empty;
                     switch (version)
                     {
@@ -50,9 +51,9 @@ namespace King.WebApi.Extension.Module
             app.UseSwagger();
             app.UseSwaggerUI(s =>
             {
-                typeof(Version).GetEnumNames().ToList().ForEach(v =>
+                typeof(Versions).GetEnumNames().ToList().ForEach(v =>
                 {
-                    int version = (int)Enum.Parse(typeof(Version), v);
+                    int version = (int)Enum.Versions.Parse(typeof(Versions), v);
                     var description = string.Empty;
                     switch (version)
                     {
@@ -71,14 +72,5 @@ namespace King.WebApi.Extension.Module
                 });
             });
         }
-
-        #region Version
-        private enum Version
-        {
-            Dev = 0,
-            Pro = 1,
-            Test = 2
-        }
-        #endregion
     }
 }
