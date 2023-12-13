@@ -12,7 +12,6 @@ namespace King.WebApi.Controllers
         {
             _testService = testService;
         }
-
         private readonly ITestService _testService;
 
         /// <summary>
@@ -25,7 +24,7 @@ namespace King.WebApi.Controllers
             var result = await _testService.InsertAsync(new TestModel
             {
                 Description = "Test",
-                Name = "Test1"
+                Name = "赵云"
             });
             return result;
         }

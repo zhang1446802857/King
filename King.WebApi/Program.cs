@@ -12,6 +12,7 @@ namespace King.WebApi
 
             builder.Services.AddSwaggerModule();//swagger
             builder.Services.AddSqlSugarModule();//sqlsugar
+            builder.Services.AddNlogModule();//nlog
 
             #region autofac
             builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory()) ;
