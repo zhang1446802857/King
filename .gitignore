@@ -1,0 +1,11 @@
+bin
+obj
+*.dll
+.vs
+*.csproj.user
+*.md
+*.pdb
+*.suo
+*.user
+*.sln.docstates
+*.pubxml
