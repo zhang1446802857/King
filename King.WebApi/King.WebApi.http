@@ -1,0 +1,6 @@
+@King.WebApi_HostAddress = http://localhost:5139
+
+GET {{King.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
