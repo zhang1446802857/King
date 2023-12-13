@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace King.WebApi.Extension
+namespace King.WebApi.Extension.Module
 {
     public static class SwaggerModule
     {
@@ -36,10 +36,10 @@ namespace King.WebApi.Extension
                     {
                         Version = v,
                         Description = description,
-                        Title=description
+                        Title = description
                     });
                     var basePath = AppDomain.CurrentDomain.BaseDirectory;
-                    var xmlPath = Path.Combine(basePath,"Readme.xml");
+                    var xmlPath = Path.Combine(basePath, "Readme.xml");
                     s.IncludeXmlComments(xmlPath);
                 });
             });
@@ -66,8 +66,8 @@ namespace King.WebApi.Extension
                             description = "测试(自定义)版本API";
                             break;
                     }
-                    s.SwaggerEndpoint($"swagger/{v}/swagger.json",$"{description}");
-                    s.RoutePrefix=string.Empty;
+                    s.SwaggerEndpoint($"swagger/{v}/swagger.json", $"{description}");
+                    s.RoutePrefix = string.Empty;
                 });
             });
         }

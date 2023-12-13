@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using SqlSugar;
 
-namespace King.WebApi.Extension
+namespace King.WebApi.Extension.Module
 {
     public static class SqlSugarModule
     {

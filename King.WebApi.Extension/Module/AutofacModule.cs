@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using System.Reflection;
 
-namespace King.WebApi.Extension
+namespace King.WebApi.Extension.Module
 {
     public class AutofacModule : Autofac.Module
     {
