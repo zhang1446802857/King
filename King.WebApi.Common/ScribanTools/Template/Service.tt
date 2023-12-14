@@ -1,0 +1,15 @@
+﻿using King.WebApi.Model.Models;
+using King.WebApi.Repository.IRepository;
+using King.WebApi.Service.IService;
+
+namespace King.WebApi.Service.Service
+{
+    public class {{name}}Service : BaseService<{{model}}>, I{{name}}Service
+    {
+        public {{name}}Service(IBaseRepository<{{model}}> baseRepository):base(baseRepository)
+        {
+            _baseRepository = baseRepository;
+        }
+        private readonly IBaseRepository<{{model}}> _baseRepository;   
+    }
+}

@@ -1,6 +1,8 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using King.WebApi.Extension.Filter;
 using King.WebApi.Extension.Module;
+using Microsoft.AspNetCore.Mvc;
 
 namespace King.WebApi
 {
@@ -14,6 +16,7 @@ namespace King.WebApi
             builder.Services.AddSqlSugarModule();//sqlsugar
             builder.Services.AddNlogModule();//nlog
             builder.Services.AddGlobalExceptionModule();//全局异常
+            builder.Services.AddActionFilterModule();//过滤器
 
             #region autofac
             builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory()) ;

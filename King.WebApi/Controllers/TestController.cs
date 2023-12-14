@@ -3,10 +3,10 @@ using King.WebApi.Model.Models;
 using King.WebApi.Service.IService;
 using Microsoft.AspNetCore.Mvc;
 using King.WebApi.Extension.Enum;
+using King.WebApi.Common.ScribanTools;
 
 namespace King.WebApi.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
     public class TestController : ControllerBase
     {
@@ -23,7 +23,7 @@ namespace King.WebApi.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        [Routes(Versions.Dev)]
+        [RouteFilter(Versions.Dev)]
         public async Task<bool> insert()
         {
             var result = await _testService.InsertAsync(new TestModel
@@ -38,10 +38,20 @@ namespace King.WebApi.Controllers
         /// 查询
         /// </summary>
         /// <returns></returns>
-        [HttpPost("query")]
+        [HttpPost]
+        [RouteFilter(Versions.Dev, "Query")]
         public async Task<List<TestModel>> query()
         {
+
             return await _testService.QueryAsync();
+        }
+
+
+        [HttpPost]
+        [RouteFilter(Versions.Dev, "CodeGenerationClass")]
+        public void CodeGenerationClass(string name, string model)
+        {
+            ScribanTool.CodeGenerationClass(name, model);
         }
     }
 }

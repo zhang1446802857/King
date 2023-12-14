@@ -1,4 +1,6 @@
 ﻿using Autofac;
+using Autofac.Extras.DynamicProxy;
+using King.WebApi.Extension.Filter;
 using System.Reflection;
 
 namespace King.WebApi.Extension.Module
@@ -18,6 +20,7 @@ namespace King.WebApi.Extension.Module
             var repository = Assembly.LoadFrom(repositoryPath);
             var service = Assembly.LoadFrom(servicePath);
 
+            builder.RegisterType<ActionFilter>();
             //注入
             builder.RegisterAssemblyTypes(service, repository)
                 .AsImplementedInterfaces();

@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "King.WebApi", "King.WebApi.csproj", "{57DAE727-B0F4-43B5-9F0E-B3BEA7513DD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "King.WebApi", "King.WebApi.csproj", "{57DAE727-B0F4-43B5-9F0E-B3BEA7513DD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "King.WebApi.Repository", "..\King.WebApi.Repository\King.WebApi.Repository.csproj", "{36CAF796-AC4A-4058-8C81-61E7CC8D3A28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "King.WebApi.Repository", "..\King.WebApi.Repository\King.WebApi.Repository.csproj", "{36CAF796-AC4A-4058-8C81-61E7CC8D3A28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "King.WebApi.Service", "..\King.WebApi.Service\King.WebApi.Service.csproj", "{0C3DEA50-947E-4972-8B52-2F377728DDF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "King.WebApi.Service", "..\King.WebApi.Service\King.WebApi.Service.csproj", "{0C3DEA50-947E-4972-8B52-2F377728DDF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "King.WebApi.Model", "..\King.WebApi.Model\King.WebApi.Model.csproj", "{8BA37F78-9253-4E1E-8B22-0454726FAF8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "King.WebApi.Model", "..\King.WebApi.Model\King.WebApi.Model.csproj", "{8BA37F78-9253-4E1E-8B22-0454726FAF8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "King.WebApi.Extension", "..\King.WebApi.Extension\King.WebApi.Extension.csproj", "{AF230AA5-B442-49B2-85D8-39D3BB84B1CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "King.WebApi.Extension", "..\King.WebApi.Extension\King.WebApi.Extension.csproj", "{AF230AA5-B442-49B2-85D8-39D3BB84B1CF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "King.WebApi.Common", "..\King.WebApi.Common\King.WebApi.Common.csproj", "{983245B5-8052-484D-857C-2A8A8C39ED51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{AF230AA5-B442-49B2-85D8-39D3BB84B1CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF230AA5-B442-49B2-85D8-39D3BB84B1CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF230AA5-B442-49B2-85D8-39D3BB84B1CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{983245B5-8052-484D-857C-2A8A8C39ED51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{983245B5-8052-484D-857C-2A8A8C39ED51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{983245B5-8052-484D-857C-2A8A8C39ED51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{983245B5-8052-484D-857C-2A8A8C39ED51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

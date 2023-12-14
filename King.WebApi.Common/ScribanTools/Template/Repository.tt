@@ -4,9 +4,9 @@ using SqlSugar;
 
 namespace King.WebApi.Repository.Repository
 {
-    public class TestRepository : BaseRepository<TestModel>, ITestRepository
+    public class {{name}}Repository : BaseRepository<{{model}}>, I{{name}}Repository
     {
-        public TestRepository(ISqlSugarClient db) : base(db)
+        public {{name}}Repository(ISqlSugarClient db) : base(db)
         {
         }
     }

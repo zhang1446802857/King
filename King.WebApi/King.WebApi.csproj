@@ -26,9 +26,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\King.WebApi.Common\King.WebApi.Common.csproj" />
     <ProjectReference Include="..\King.WebApi.Extension\King.WebApi.Extension.csproj" />
-    <ProjectReference Include="..\King.WebApi.Model\King.WebApi.Model.csproj" />
-    <ProjectReference Include="..\King.WebApi.Service\King.WebApi.Service.csproj" />
   </ItemGroup>
 
 </Project>

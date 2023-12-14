@@ -2,7 +2,7 @@
 
 namespace King.WebApi.Service.IService
 {
-    public interface ITestService:IBaseService<TestModel>
+    public interface I{{name}}Service:IBaseService<{{model}}>
     {
     }
 }
