@@ -4,12 +4,12 @@ using King.WebApi.Service.IService;
 
 namespace King.WebApi.Service.Service
 {
-    public class LoggingService : BaseService<LoggingModel>, ILoggingService
+    public class LoggingService : BaseService<LogModel>, ILoggingService
     {
-        public LoggingService(IBaseRepository<LoggingModel> baseRepository):base(baseRepository)
+        public LoggingService(IBaseRepository<LogModel> baseRepository):base(baseRepository)
         {
             _baseRepository = baseRepository;
         }
-        private readonly IBaseRepository<LoggingModel> _baseRepository;   
+        private readonly IBaseRepository<LogModel> _baseRepository;   
     }
 }

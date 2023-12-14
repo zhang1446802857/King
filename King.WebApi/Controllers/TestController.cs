@@ -1,11 +1,4 @@
-﻿using King.WebApi.Extension.Filter;
-using King.WebApi.Model.Models;
-using King.WebApi.Service.IService;
-using Microsoft.AspNetCore.Mvc;
-using King.WebApi.Extension.Enum;
-using King.WebApi.Common.ScribanTools;
-
-namespace King.WebApi.Controllers
+﻿namespace King.WebApi.Controllers
 {
     [ApiController]
     public class TestController : ControllerBase

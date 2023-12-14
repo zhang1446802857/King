@@ -13,7 +13,6 @@ namespace King.WebApi.Extension.Filter
     public class GlobalExceptionFilter(ILogger<GlobalExceptionFilter> logger) : IExceptionFilter
     {
         private readonly ILogger<GlobalExceptionFilter> _logger = logger;
-
         public void OnException(ExceptionContext context)
         {
             StringBuilder exMsg = new();

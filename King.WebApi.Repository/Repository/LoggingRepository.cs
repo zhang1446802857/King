@@ -4,7 +4,7 @@ using SqlSugar;
 
 namespace King.WebApi.Repository.Repository
 {
-    public class LoggingRepository : BaseRepository<LoggingModel>, ILoggingRepository
+    public class LoggingRepository : BaseRepository<LogModel>, ILoggingRepository
     {
         public LoggingRepository(ISqlSugarClient db) : base(db)
         {

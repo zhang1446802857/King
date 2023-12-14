@@ -5,13 +5,13 @@ namespace King.WebApi.Model.Models
     /// 日志记录表
     ///</summary>
     [SugarTable("K_Logging")]
-    public class LoggingModel
+    public class LogModel
     {
         /// <summary>
         /// 主键 
         ///</summary>
         [SugarColumn(ColumnName = "ID", IsPrimaryKey = true, IsIdentity = true)]
-        public int ID { get; set; }
+        public int Id { get; set; }
         /// <summary>
         /// 日志来源 
         ///</summary>
@@ -28,7 +28,7 @@ namespace King.WebApi.Model.Models
         [SugarColumn(ColumnName = "CreateTime")]
         public DateTime CreateTime { get; set; }
         /// <summary>
-        /// 日志等级:0-error，1-info,2-debug 
+        /// 日志等级:0-info，1-error,2-debug 
         ///</summary>
         [SugarColumn(ColumnName = "Level")]
         public int Level { get; set; }
@@ -37,5 +37,15 @@ namespace King.WebApi.Model.Models
         ///</summary>
         [SugarColumn(ColumnName = "Content")]
         public string Content { get; set; }
+        /// <summary>
+        /// 来源控制器 
+        ///</summary>
+        [SugarColumn(ColumnName = "Controller")]
+        public string Controller { get; set; }
+        /// <summary>
+        /// 来源方法 
+        ///</summary>
+        [SugarColumn(ColumnName = "Action")]
+        public string Action { get; set; }
     }
 }
