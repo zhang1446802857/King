@@ -1,7 +1,10 @@
 ﻿
 
+using Microsoft.AspNetCore.Authorization;
+
 namespace King.WebApi.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UtilityController : ControllerBase

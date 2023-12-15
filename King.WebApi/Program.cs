@@ -31,7 +31,6 @@ namespace King.WebApi
 
             app.UseSwaggerModule();
 
-            app.UseAuthorization();
             app.MapControllers();
             app.Run();
         }
