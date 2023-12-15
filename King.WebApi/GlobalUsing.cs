@@ -4,3 +4,4 @@ global using King.WebApi.Service.IService;
 global using Microsoft.AspNetCore.Mvc;
 global using King.WebApi.Extension.Enum;
 global using King.WebApi.Common.ScribanTools;
+global using King.WebApi.Model.Entitys;
