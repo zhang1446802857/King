@@ -8,6 +8,7 @@
             _testService = testService;
             _logger = logger;
         }
+
         private readonly ILogger<TestController> _logger;
         private readonly ITestService _testService;
 
@@ -35,10 +36,8 @@
         [RouteFilter(Versions.Dev, "Query")]
         public async Task<List<TestModel>> query()
         {
-
             return await _testService.QueryAsync();
         }
-
 
         [HttpPost]
         [RouteFilter(Versions.Dev, "CodeGenerationClass")]

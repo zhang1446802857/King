@@ -8,10 +8,12 @@ namespace King.WebApi.Model.Entitys
         /// 请求状态码
         /// </summary>
         public StateCode Code { get; set; }
+
         /// <summary>
         /// 返回数据
         /// </summary>
         public string? Data { get; set; }
+
         /// <summary>
         /// 返回消息体
         /// </summary>

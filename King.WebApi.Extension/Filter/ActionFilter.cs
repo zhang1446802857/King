@@ -1,15 +1,14 @@
 ﻿using King.WebApi.Model.Models;
 using King.WebApi.Service.IService;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 
 namespace King.WebApi.Extension.Filter
 {
     public class ActionFilter(ILoggingService loggingService) : IAsyncActionFilter
     {
         private readonly ILoggingService _loggingService = loggingService;
+
         public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
             var result = await next();
@@ -26,6 +25,7 @@ namespace King.WebApi.Extension.Filter
             await _loggingService.InsertAsync(log);
         }
     }
+
     public static class ActionFilterModule
     {
         public static void AddActionFilterModule(this IServiceCollection services)

@@ -4,7 +4,6 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-
 namespace King.WebApi.Common.JwtTools
 {
     public static class JwtTool

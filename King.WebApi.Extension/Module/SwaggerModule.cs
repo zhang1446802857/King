@@ -26,9 +26,11 @@ namespace King.WebApi.Extension.Module
                         case 0:
                             description = "开发版本API";
                             break;
+
                         case 1:
                             description = "正式版本API";
                             break;
+
                         case 2:
                             description = "测试(自定义)版本API";
                             break;
@@ -62,7 +64,7 @@ namespace King.WebApi.Extension.Module
                 s.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             }).AddJwtBearer(b =>
             {
-                IConfiguration build=new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+                IConfiguration build = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
                 var iss = build["Jwt:Iss"] as string ?? "DefaultIss";
                 var aud = build["Jwt:Aud"] as string ?? "DefaultAud";
                 var key = build["Jwt:Key"] as string ?? "DefaultKey";
@@ -71,15 +73,15 @@ namespace King.WebApi.Extension.Module
 
                 b.TokenValidationParameters = new TokenValidationParameters
                 {
-                     ValidateIssuerSigningKey = true,
-                     ValidateIssuer=true,
-                     ValidateAudience=true,
-                     ValidateLifetime=true,
-                     RequireExpirationTime=true,
-                     IssuerSigningKey=keyCode,
-                     ValidIssuer=iss,
-                     ValidAudience=aud,
-                     ClockSkew=TimeSpan.Zero
+                    ValidateIssuerSigningKey = true,
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    RequireExpirationTime = true,
+                    IssuerSigningKey = keyCode,
+                    ValidIssuer = iss,
+                    ValidAudience = aud,
+                    ClockSkew = TimeSpan.Zero
                 };
             });
         }
@@ -98,9 +100,11 @@ namespace King.WebApi.Extension.Module
                         case 0:
                             description = "开发版本API";
                             break;
+
                         case 1:
                             description = "正式版本API";
                             break;
+
                         case 2:
                             description = "测试(自定义)版本API";
                             break;
@@ -110,7 +114,7 @@ namespace King.WebApi.Extension.Module
                 });
             });
 
-            app.UseAuthentication();    
+            app.UseAuthentication();
             app.UseAuthorization();
         }
     }

@@ -1,5 +1,4 @@
 ﻿using Autofac;
-using Autofac.Extras.DynamicProxy;
 using King.WebApi.Extension.Filter;
 using System.Reflection;
 

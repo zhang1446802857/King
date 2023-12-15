@@ -10,6 +10,7 @@ namespace King.WebApi.Repository.Repository
             base.Context = db;
             _db = db;
         }
+
         private readonly ISqlSugarClient _db;
 
         public async Task<bool> AddAsync(T entity)
@@ -21,6 +22,5 @@ namespace King.WebApi.Repository.Repository
         {
             return await base.GetListAsync();
         }
-
     }
 }

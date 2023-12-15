@@ -1,15 +1,9 @@
 ﻿using Scriban;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace King.WebApi.Common.ScribanTools
 {
     public class ScribanTool
     {
-
         public static string templateServicePath = "Service.tt";
         public static string templateRepositoryPath = "Repository.tt";
         public static string templateIServicePath = "IService.tt";
@@ -40,6 +34,7 @@ namespace King.WebApi.Common.ScribanTools
             outPath = Path.Combine(outPath, $"I{codeName}Service.cs");
             File.WriteAllText(outPath, result);
         }
+
         public static void CodeService(string codeName, string codeModel, string outPath)
         {
             var template = Template.Parse(File.ReadAllText(Path.Combine(basePath, templateServicePath)));
@@ -47,6 +42,7 @@ namespace King.WebApi.Common.ScribanTools
             outPath = Path.Combine(outPath, $"{codeName}Service.cs");
             File.WriteAllText(outPath, result);
         }
+
         public static void CodeIRepository(string codeName, string codeModel, string outPath)
         {
             var template = Template.Parse(File.ReadAllText(Path.Combine(basePath, templateIRepositoryPath)));
@@ -54,6 +50,7 @@ namespace King.WebApi.Common.ScribanTools
             outPath = Path.Combine(outPath, $"I{codeName}Repository.cs");
             File.WriteAllText(outPath, result);
         }
+
         public static void CodeRepository(string codeName, string codeModel, string outPath)
         {
             var template = Template.Parse(File.ReadAllText(Path.Combine(basePath, templateRepositoryPath)));

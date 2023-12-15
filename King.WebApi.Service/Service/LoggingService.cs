@@ -6,10 +6,11 @@ namespace King.WebApi.Service.Service
 {
     public class LoggingService : BaseService<LogModel>, ILoggingService
     {
-        public LoggingService(IBaseRepository<LogModel> baseRepository):base(baseRepository)
+        public LoggingService(IBaseRepository<LogModel> baseRepository) : base(baseRepository)
         {
             _baseRepository = baseRepository;
         }
-        private readonly IBaseRepository<LogModel> _baseRepository;   
+
+        private readonly IBaseRepository<LogModel> _baseRepository;
     }
 }

@@ -11,11 +11,11 @@ namespace King.WebApi.Extension.Filter
         {
         }
 
-        public string? GroupName {get; set;}
+        public string? GroupName { get; set; }
 
-        public RouteFilter(Versions version,string name= "[action]") : base($"/{version}/[controller]/{name}")
+        public RouteFilter(Versions version, string name = "[action]") : base($"/{version}/[controller]/{name}")
         {
-            GroupName=version.ToString();
+            GroupName = version.ToString();
         }
     }
 }

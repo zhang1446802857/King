@@ -2,7 +2,7 @@
 
 namespace King.WebApi.Repository.IRepository
 {
-    public interface ITestRepository:IBaseRepository<TestModel>
+    public interface ITestRepository : IBaseRepository<TestModel>
     {
     }
 }

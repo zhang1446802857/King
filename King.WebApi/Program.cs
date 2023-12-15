@@ -1,8 +1,6 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using King.WebApi.Extension.Filter;
 using King.WebApi.Extension.Module;
-using Microsoft.AspNetCore.Mvc;
 
 namespace King.WebApi
 {
@@ -19,15 +17,16 @@ namespace King.WebApi
             builder.Services.AddActionFilterModule();//¹ýÂËÆ÷
 
             #region autofac
-            builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory()) ;
+
+            builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
             builder.Host.ConfigureContainer<ContainerBuilder>(B =>
             {
                 B.RegisterModule(new AutofacModule());
             });
-            #endregion
+
+            #endregion autofac
 
             var app = builder.Build();
-
 
             app.UseSwaggerModule();
 
