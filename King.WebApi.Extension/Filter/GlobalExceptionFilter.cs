@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using King.WebApi.Model.Entitys;
+using King.WebApi.Model.Enum;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -21,11 +23,17 @@ namespace King.WebApi.Extension.Filter
             exMsg.AppendLine($"【异常错误:】{context.Exception.Message}");
             exMsg.AppendLine($"【堆栈跟踪:】{context.Exception.StackTrace}");
             _logger.LogError(exMsg.ToString());
-            context.Result = new ObjectResult(new { error = context.Exception.Message })
+            context.Result = new ObjectResult(new R
+            {
+                Code = StateCode.ERROR,
+                Data = null,
+                Msg = context.Exception.Message
+            })
             {
                 StatusCode = 400
             };
             context.ExceptionHandled = true;
         }
     }
+
 }
