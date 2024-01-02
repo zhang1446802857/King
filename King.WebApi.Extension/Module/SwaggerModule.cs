@@ -1,16 +1,16 @@
 ﻿using King.WebApi.Extension.Enum;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.Filters;
-using System.Text;
 
 namespace King.WebApi.Extension.Module
 {
     public static class SwaggerModule
     {
+        /// <summary>
+        /// 添加Swagger模块
+        /// </summary>
+        /// <param name="services"></param>
         public static void AddSwaggerModule(this IServiceCollection services)
         {
             services.AddControllers();
@@ -54,38 +54,15 @@ namespace King.WebApi.Extension.Module
                     Type = Microsoft.OpenApi.Models.SecuritySchemeType.ApiKey,
                     Description = "Jwt授权(Bearer+空格+Token)",
                     In = Microsoft.OpenApi.Models.ParameterLocation.Header,
-                    Name = "JwtAuthoriza"
+                    Name = "Authorization"
                 });
-            });
-
-            services.AddAuthentication(s =>
-            {
-                s.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                s.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(b =>
-            {
-                IConfiguration build = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
-                var iss = build["Jwt:Iss"] as string ?? "DefaultIss";
-                var aud = build["Jwt:Aud"] as string ?? "DefaultAud";
-                var key = build["Jwt:Key"] as string ?? "DefaultKey";
-                var keyCode = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
-                var code = new SigningCredentials(keyCode, SecurityAlgorithms.HmacSha256);
-
-                b.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuerSigningKey = true,
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidateLifetime = true,
-                    RequireExpirationTime = true,
-                    IssuerSigningKey = keyCode,
-                    ValidIssuer = iss,
-                    ValidAudience = aud,
-                    ClockSkew = TimeSpan.Zero
-                };
             });
         }
 
+        /// <summary>
+        /// 开启Swagger
+        /// </summary>
+        /// <param name="app"></param>
         public static void UseSwaggerModule(this IApplicationBuilder app)
         {
             app.UseSwagger();
@@ -113,9 +90,6 @@ namespace King.WebApi.Extension.Module
                     s.RoutePrefix = string.Empty;
                 });
             });
-
-            app.UseAuthentication();
-            app.UseAuthorization();
         }
     }
 }

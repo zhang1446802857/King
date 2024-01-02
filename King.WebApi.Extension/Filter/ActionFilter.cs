@@ -9,6 +9,9 @@ namespace King.WebApi.Extension.Filter
     {
         private readonly ILoggingService _loggingService = loggingService;
 
+        /// <summary>
+        /// 日志记录中间件
+        /// </summary>
         public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
             var result = await next();
@@ -28,6 +31,9 @@ namespace King.WebApi.Extension.Filter
 
     public static class ActionFilterModule
     {
+        /// <summary>
+        /// 注册记录日志过滤器
+        /// </summary>
         public static void AddActionFilterModule(this IServiceCollection services)
         {
             services.AddControllers(option =>
