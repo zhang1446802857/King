@@ -14,7 +14,8 @@ namespace King.WebApi
             builder.Services.AddSqlSugarModule();//sqlsugar
             builder.Services.AddNlogModule();//nlog
             builder.Services.AddGlobalExceptionModule();//全局异常
-            builder.Services.AddActionFilterModule();//过滤器
+            builder.Services.AddActionFilterModule();//注册中间件过滤器
+            builder.Services.AddBearerModule();//bearer校验
 
             #region autofac
 
@@ -29,6 +30,8 @@ namespace King.WebApi
             var app = builder.Build();
 
             app.UseSwaggerModule();
+            app.UseAopModule();
+            app.UseBearerModule();
 
             app.MapControllers();
             app.Run();

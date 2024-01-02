@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using King.WebApi.Common.JwtTools;
+using Microsoft.AspNetCore.Authorization;
 
 namespace King.WebApi.Controllers
 {
@@ -24,6 +25,14 @@ namespace King.WebApi.Controllers
                 Data = null,
                 Msg = "操作成功"
             };
+        }
+
+        [HttpGet]
+        [RouteFilter(Versions.Dev, "GetToken")]
+        [AllowAnonymous]
+        public string GetToken()
+        {
+            return JwtTool.CreateToken();
         }
     }
 }

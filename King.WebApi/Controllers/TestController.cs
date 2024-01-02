@@ -1,4 +1,6 @@
-﻿namespace King.WebApi.Controllers
+﻿using Microsoft.AspNetCore.Authorization;
+
+namespace King.WebApi.Controllers
 {
     [ApiController]
     public class TestController : ControllerBase
@@ -34,16 +36,10 @@
         /// <returns></returns>
         [HttpPost]
         [RouteFilter(Versions.Dev, "Query")]
+        [Authorize]
         public async Task<List<TestModel>> query()
         {
             return await _testService.QueryAsync();
-        }
-
-        [HttpPost]
-        [RouteFilter(Versions.Dev, "CodeGenerationClass")]
-        public void CodeGenerationClass(string name, string model)
-        {
-            ScribanTool.CodeGenerationClass(name, model);
         }
     }
 }
