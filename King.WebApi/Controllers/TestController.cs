@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-
-namespace King.WebApi.Controllers
+﻿namespace King.WebApi.Controllers
 {
     [ApiController]
     public class TestController : ControllerBase
@@ -10,7 +8,6 @@ namespace King.WebApi.Controllers
             _testService = testService;
             _logger = logger;
         }
-
         private readonly ILogger<TestController> _logger;
         private readonly ITestService _testService;
 
@@ -36,10 +33,18 @@ namespace King.WebApi.Controllers
         /// <returns></returns>
         [HttpPost]
         [RouteFilter(Versions.Dev, "Query")]
-        [Authorize]
         public async Task<List<TestModel>> query()
         {
+
             return await _testService.QueryAsync();
+        }
+
+
+        [HttpPost]
+        [RouteFilter(Versions.Dev, "CodeGenerationClass")]
+        public void CodeGenerationClass(string name, string model)
+        {
+            ScribanTool.CodeGenerationClass(name, model);
         }
     }
 }
